@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import base_url from '../services/base_url';
 import { UpdateBlog } from '../services/allApis';
 import { toast } from 'react-toastify';
-import { editblogContext } from '../context/contextApi';
+import { editblogContext } from '../context/ContextApi';
 
 function EditBlog() {
   const location = useLocation();

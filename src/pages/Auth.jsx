@@ -4,7 +4,10 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { toast } from 'react-toastify';
 import { adminLoginApi, loginApi, registrationApi } from '../services/allApis';
-import { authContext } from '../context/contextApi';
+// import { authContext } from '../context/contextApi';
+import { authContext } from '../context/ContextApi';
+
+
 
 function Auth() {
   const [authstatus, setAuthStatus] = useState(false);
@@ -13,6 +16,7 @@ function Auth() {
   });
 
   const nav = useNavigate();
+
   const { setAuth } = useContext(authContext);
 
   const changeStatus = () => {

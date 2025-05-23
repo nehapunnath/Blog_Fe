@@ -3,7 +3,7 @@ import { Card, Button, Row, Col } from 'react-bootstrap'
 import { Link, Links } from 'react-router-dom'
 import { deleteBlogApi, getBlogsApi } from '../services/allApis'
 import base_url from '../services/base_url'
-import { addblogContext, editblogContext } from '../context/contextApi'
+import { addblogContext, editblogContext } from '../context/ContextApi'
 import { toast } from 'react-toastify'
 
 function MyBlogs() {
