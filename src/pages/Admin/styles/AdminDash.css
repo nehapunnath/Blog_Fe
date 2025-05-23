@@ -1,0 +1,44 @@
+.admin-dashboard {
+  background: #fdfdfd;
+  min-height: 100vh;
+}
+
+.stat-card {
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h6 {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.stat-card .icon-lg {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+.small-link {
+  font-size: 0.8rem;
+  text-decoration: underline;
+  color: inherit;
+}
+
+.section-box {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.stat-card.blue { border-left: 6px solid #007bff; }
+.stat-card.green { border-left: 6px solid #28a745; }
+.stat-card.yellow { border-left: 6px solid #ffc107; }
+.stat-card.cyan { border-left: 6px solid #17a2b8; }
+.stat-card.red { border-left: 6px solid #dc3545; }
