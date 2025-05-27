@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { addBlogApi } from '../services/allApis';
 import { useEffect } from 'react';
-import { addblogContext } from '../context/ContextApi';
+import { addblogContext } from '../context/contextApi';
 import { useNavigate } from 'react-router-dom';
 
 function AddBlog() {
@@ -25,7 +25,7 @@ function AddBlog() {
     }
   }, [blog.image])
 
-  const { addblog, setaddBlog } = useContext(addblogContext)
+  // const { addblog, setaddBlog } = useContext(addblogContext)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -48,7 +48,7 @@ function AddBlog() {
             title: "", shortdescrptn: "", content: "", category: "", image: ""
           })
           setPreview("")
-          setaddBlog(result)
+          // setaddBlog(result)
           nav('/myblog')
         }
         else {

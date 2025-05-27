@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import base_url from '../services/base_url';
 import { UpdateBlog } from '../services/allApis';
 import { toast } from 'react-toastify';
-import { editblogContext } from '../context/ContextApi';
+// import { editblogContext } from '../context/contextApi';
 
 function EditBlog() {
   const location = useLocation();
@@ -16,7 +16,7 @@ function EditBlog() {
 
   const [preview, setPreview] = useState("");
 
-  const {editblog,setEditBlog}=useContext(editblogContext)
+  // const {editblog,setEditBlog}=useContext(editblogContext)
 
   // Redirect or prevent crash if no blog data was passed
   useEffect(() => {
@@ -51,7 +51,7 @@ function EditBlog() {
       if (result.status === 200) {
         toast.success("Blog Updated!!");
         nav('/myblog');
-        setEditBlog(result)
+        // setEditBlog(result)
       } else {
         toast.error("Something went wrong...Updating Failed");
       }

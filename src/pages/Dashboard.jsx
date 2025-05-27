@@ -170,9 +170,9 @@ function Dashboard() {
                                     <Card
                                         style={{
                                             width: '100%', // Make card width responsive
-                                            maxWidth: '25rem', // Limit max width
+                                            maxWidth: '30rem', // Limit max width
                                             marginTop: '20px',
-                                            height: '30rem',
+                                            height: '35rem',
                                             overflow: 'hidden',
                                             borderTopLeftRadius: '1rem',
                                             borderTopRightRadius: '1rem',

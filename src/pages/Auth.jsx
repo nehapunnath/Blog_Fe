@@ -5,7 +5,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { toast } from 'react-toastify';
 import { adminLoginApi, loginApi, registrationApi } from '../services/allApis';
 // import { authContext } from '../context/contextApi';
-import { authContext } from '../context/ContextApi';
+// import { authContext } from '../context/ContextApi';
 
 
 
@@ -17,7 +17,7 @@ function Auth() {
 
   const nav = useNavigate();
 
-  const { setAuth } = useContext(authContext);
+  // const { setAuth } = useContext(authContext);
 
   const changeStatus = () => {
     setAuthStatus(!authstatus);
@@ -68,7 +68,7 @@ function Auth() {
         sessionStorage.setItem('profile', result.data.profile);
         sessionStorage.setItem('userId', result.data.userId);
 
-        setAuth(true);
+        // setAuth(true);
         setUser({ username: "", email: "", password: "" });
 
         nav(isAdmin ? '/admin/dash' : '/dash');
