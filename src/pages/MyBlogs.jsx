@@ -3,19 +3,19 @@ import { Card, Button, Row, Col } from 'react-bootstrap'
 import { Link, Links } from 'react-router-dom'
 import { deleteBlogApi, getBlogsApi } from '../services/allApis'
 import base_url from '../services/base_url'
-// import { addblogContext, editblogContext } from '../context/contextApi'
+import { addblogContext, editblogContext } from '../context/ContextApii'
 import { toast } from 'react-toastify'
 
 function MyBlogs() {
 
   const [bloglist, setBloglist] = useState([])
 
-  // const { addblog, setaddBlog } = useContext(addblogContext)
-  // const {editblog,setEditBlog}=useContext(editblogContext)
+  const { addblog, setaddBlog } = useContext(addblogContext)
+  const {editblog,setEditBlog}=useContext(editblogContext)
 
   useEffect(() => {
     getData()
-  }, [])
+  }, [addblog,editblog])
 
   const getData = async () => {
     const result = await getBlogsApi()

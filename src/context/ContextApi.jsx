@@ -1,29 +1,30 @@
-import React, { createContext, useState } from 'react'
+// import React, { createContext, useState } from 'react'
 
-export const addblogContext = createContext()
-export const editblogContext=createContext()
-export const authContext=createContext()
+// export const addblogContext = createContext()
+// export const editblogContext=createContext()
+// export const authContext=createContext()
 
 
-function contextApi({children}) {
-    const [addblog, setaddBlog] = useState("")
+// function contextApi({children}) {
+//     const [addblog, setaddBlog] = useState("")
 
-    const[editblog,setEditBlog]=useState("")
+//     const[editblog,setEditBlog]=useState("")
 
-    const [auth,setAuth]=useState(false)
-  return (
-    <>
+//     const [auth,setAuth]=useState(false)
+//   return (
+//     <>
 
-    <addblogContext.Provider value={{addblog,setaddBlog}}>
-      <editblogContext.Provider value={{editblog,setEditBlog}}>
-        <authContext.Provider value={{auth,setAuth}}>
-        {children}
-        </authContext.Provider>
-      </editblogContext.Provider>
-    </addblogContext.Provider>
+//     <addblogContext.Provider value={{addblog,setaddBlog}}>
+//       <editblogContext.Provider value={{editblog,setEditBlog}}>
+//         <authContext.Provider value={{auth,setAuth}}>
+//         {children}
+//         </authContext.Provider>
+//       </editblogContext.Provider>
+//     </addblogContext.Provider>
     
-    </>
-  )
-}
+//     </>
+//   )
+// }
 
-export default contextApi
+// export default contextApi
+
