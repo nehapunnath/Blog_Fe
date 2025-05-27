@@ -6,21 +6,18 @@ import { toast } from 'react-toastify';
 import { adminLoginApi, loginApi, registrationApi } from '../services/allApis';
 import { authContext } from '../context/ContextApii';
 
-
-
 function Auth() {
-  const [authstatus, setAuthStatus] = useState(false);
+  const [authstatus, setAuthStatus] = useState(false)
   const [user, setUser] = useState({
     username: "", email: "", password: ""
   });
 
   const nav = useNavigate();
-
-  const { setAuth } = useContext(authContext);
+  const { setAuth } = useContext(authContext)
 
   const changeStatus = () => {
     setAuthStatus(!authstatus);
-  };
+  }
 
   const handleReg = async () => {
     const { email, username, password } = user;
@@ -58,17 +55,17 @@ function Auth() {
       if (result && result.status === 200) {
         toast.success(isAdmin ? "Admin Logged In" : "Welcome back! You’ve successfully logged in");
 
-        sessionStorage.setItem('token', result.data.token);
-        sessionStorage.setItem('user', result.data.user);
-        sessionStorage.setItem('email', result.data.email);
-        sessionStorage.setItem('joined', result.data.joined);
-        sessionStorage.setItem('bio', result.data.bio);
-        sessionStorage.setItem('location', result.data.location);
-        sessionStorage.setItem('profile', result.data.profile);
-        sessionStorage.setItem('userId', result.data.userId);
+        sessionStorage.setItem('token', result.data.token)
+        sessionStorage.setItem('user', result.data.user)
+        sessionStorage.setItem('email', result.data.email)
+       sessionStorage.setItem('joined', result.data.joined)
+        sessionStorage.setItem('bio', result.data.bio)
+        sessionStorage.setItem('location', result.data.location)
+        sessionStorage.setItem('profile', result.data.profile)
+        sessionStorage.setItem('userId', result.data.userId)
 
         setAuth(true);
-        setUser({ username: "", email: "", password: "" });
+        setUser({ username: "", email: "", password: "" })
 
         nav(isAdmin ? '/admin/dash' : '/dash');
       } else {
@@ -83,7 +80,7 @@ function Auth() {
 
   return (
     <div className='container-fluid d-flex justify-content-center align-items-center min-vh-100' style={{ background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)' }}>
-      <div className='w-25 border shadow bg-light p-3' style={{ borderRadius: '15px' }}>
+      <div className='w-100 w-md-50 w-lg-25 border shadow bg-light p-3 p-md-4 p-lg-5 mx-2' style={{ borderRadius: '15px', maxWidth: '500px' }}>
         <h2 className='text-center'>{authstatus ? 'Create Account' : 'Welcome Back!!!'}</h2>
         <p className='text-center text-muted m-2'>{authstatus ? 'Join Today' : 'Please Login to Continue'}</p>
 
@@ -137,17 +134,17 @@ function Auth() {
         {authstatus ? (
           <button className="btn btn-success w-100" onClick={handleReg}>Sign Up</button>
         ) : (
-          <div className="d-flex justify-content-between mb-3">
-            <button className="btn btn-primary w-50 me-1" onClick={() => handleLogin(false)}>User Login</button>
-            <button className="btn btn-dark w-50 ms-1" onClick={() => handleLogin(true)}>Admin Login</button>
+          <div className="d-flex flex-column flex-md-row justify-content-between mb-3 gap-2">
+            <button className="btn btn-primary w-100" onClick={() => handleLogin(false)}>User Login</button>
+            <button className="btn btn-dark w-100" onClick={() => handleLogin(true)}>Admin Login</button>
           </div>
         )}
 
-        <div className="mt-2 d-flex justify-content-evenly align-items-center">
+        <div className="mt-2 d-flex justify-content-center align-items-center">
           {authstatus ? (
-            <span>Already have an account? <button className="btn btn-link" onClick={changeStatus}>Sign in</button></span>
+            <span>Already have an account? <button className="btn btn-link p-0" onClick={changeStatus}>Sign in</button></span>
           ) : (
-            <span>Don't have an account? <button className="btn btn-link" onClick={changeStatus}>Sign Up</button></span>
+            <span>Don't have an account? <button className="btn btn-link p-0" onClick={changeStatus}>Sign Up</button></span>
           )}
         </div>
       </div>
@@ -155,4 +152,4 @@ function Auth() {
   );
 }
 
-export default Auth;
+export default Auth
